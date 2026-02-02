@@ -7,37 +7,49 @@
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
+  moduleFormat  = "cjs"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-model Account {
+model User {
   id        String   @id @default(uuid())
-  balance   Decimal
+  balance   Decimal  @db.Decimal(14, 2)
   currency  String
+
   payments  Payment[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 model Merchant {
   id        String   @id @default(uuid())
-  balance   Decimal
+  balance   Decimal  @db.Decimal(14, 2)
   currency  String
+
   payments  Payment[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 model Payment {
-  id          String   @id @default(uuid())
-  paymentId   String   @unique
-  amount      Decimal
-  currency    String
-  status      String
-  createdAt   DateTime @default(now())
+  id         String   @id @default(uuid())
 
-  accountId   String
-  merchantId  String
+  payment_id  String   @unique
 
-  account     Account  @relation(fields: [accountId], references: [id])
-  merchant    Merchant @relation(fields: [merchantId], references: [id])
+  amount     Decimal  @db.Decimal(14, 2)
+  currency   String
+  status     String   
+
+  user_id  String
+  merchant_id String
+
+  user    User  @relation(fields: [user_id], references: [id])
+  merchant   Merchant @relation(fields: [merchant_id], references: [id])
+
+  created_at  DateTime @default(now())
 }

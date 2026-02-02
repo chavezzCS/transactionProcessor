@@ -1,0 +1,98 @@
+{
+  "info": {
+    "_postman_id": "a4a2bfba-4a14-444e-ae5b-460e0cd98f7d",
+    "name": "transactionProcessor",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41735796"
+  },
+  "item": [
+    {
+      "name": "ListarUsuarios",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Payment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\": \"547e1262-429b-466d-9653-53e77861937a\",\r\n    \"amount\": 1.5,\r\n    \"currency\": \"PEN\",\r\n    \"merchant_id\":\"b8d3a1f1-7c92-4e5b-bc61-92523297a7e3\",\r\n    \"payment_id\": \"1002\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/payment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getMerchants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/merchants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "merchants"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getPayments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/payment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "payment"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
