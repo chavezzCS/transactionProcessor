@@ -21,8 +21,8 @@ model User {
 
   payments  Payment[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 model Merchant {
@@ -32,25 +32,24 @@ model Merchant {
 
   payments  Payment[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 model Payment {
   id         String   @id @default(uuid())
 
-  // idempotency key (evita cobros duplicados)
-  paymentId  String   @unique
+  payment_id  String   @unique
 
   amount     Decimal  @db.Decimal(14, 2)
   currency   String
-  status     String   // PENDING | SUCCESS | FAILED
+  status     String   
 
-  userId  String
-  merchantId String
+  user_id  String
+  merchant_id String
 
-  user    User  @relation(fields: [userId], references: [id])
-  merchant   Merchant @relation(fields: [merchantId], references: [id])
+  user    User  @relation(fields: [user_id], references: [id])
+  merchant   Merchant @relation(fields: [merchant_id], references: [id])
 
-  createdAt  DateTime @default(now())
+  created_at  DateTime @default(now())
 }
