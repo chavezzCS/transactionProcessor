@@ -6,7 +6,6 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreatePaymentDto } from './dto/create-payment.dto';
-import { Decimal } from '@prisma/client/runtime/client';
 import { DB_MESSAGES } from 'src/constants/database.constants';
 import { Prisma } from 'generated/prisma/client';
 import { CreatePaymentResponseDto } from './dto/create-payment-response.dto';
