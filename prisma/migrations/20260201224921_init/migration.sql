@@ -46,13 +46,13 @@ ALTER TABLE "Payment" ADD CONSTRAINT "Payment_merchant_id_fkey" FOREIGN KEY ("me
 -- User iniciales
 INSERT INTO "User" (id, balance, currency, "created_at", "updated_at")
 VALUES
-  ('11111111-1111-1111-1111-111111111111', 1000.00, 'PEN', NOW(), NOW()),
-  ('22222222-2222-2222-2222-222222222222', 500.00, 'PEN', NOW(), NOW());
+  ('547e1262-429b-466d-9653-53e77861937a', 1000.00, 'PEN', NOW(), NOW()),
+  ('ac962590-798c-4a37-9759-4f76274472d7', 500.00, 'PEN', NOW(), NOW());
 
 -- Merchant inicial
 INSERT INTO "Merchant" (id, balance, currency, "created_at", "updated_at")
 VALUES
-  ('33333333-3333-3333-3333-333333333333', 0.00, 'PEN', NOW(), NOW());
+  ('b8d3a1f1-7c92-4e5b-bc61-92523297a7e3', 0.00, 'PEN', NOW(), NOW());
 
 -- Constraint de saldo negativo
 ALTER TABLE "User"

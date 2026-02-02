@@ -1,4 +1,4 @@
-import { Decimal } from "generated/prisma/internal/prismaNamespace";
+import { Decimal } from 'generated/prisma/internal/prismaNamespace';
 
 export class CreatePaymentResponseDto {
   id: string;
@@ -10,7 +10,7 @@ export class CreatePaymentResponseDto {
   merchant_id: string;
   created_at: Date;
 
-    constructor(payment: Partial<CreatePaymentResponseDto>) {
+  constructor(payment: Partial<CreatePaymentResponseDto>) {
     Object.assign(this, payment);
   }
 }

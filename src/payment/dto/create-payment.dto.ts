@@ -12,15 +12,14 @@ export class CreatePaymentDto {
 
   @IsUUID()
   merchant_id: string;
-
-  @IsUUID()
+  
+  @IsString()
   payment_id: string;
 
   @IsNumber()
   @IsPositive()
   amount: number;
 
-  @IsString()
   @IsIn(['PEN']) // ajusta según el reto
   currency: string;
 }
